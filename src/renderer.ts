@@ -4,3 +4,16 @@
 // nodeIntegration is set to true in webPreferences.
 // Use preload.js to selectively enable features
 // needed in the renderer process.
+document.getElementById('greeting-button')
+  ?.addEventListener('click',
+    /**
+     * greeting-button クリック。
+     *
+     * @param ev イベントデータ。
+     */
+    (ev: MouseEvent) => {
+      const greetingTo: HTMLInputElement = document.getElementById('greeting-to') as HTMLInputElement;
+
+      const greeting: HTMLElement = document.getElementById('greeting') as HTMLElement;
+      greeting.innerText = 'Hello '+ greetingTo.value + '.';
+    });

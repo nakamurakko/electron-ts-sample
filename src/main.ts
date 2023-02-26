@@ -10,7 +10,7 @@ function createWindow() {
   });
 
   // そしてアプリの index.html を読み込みます。
-  mainWindow.loadFile(path.join(__dirname, "../src/index.html"));
+  mainWindow.loadFile(path.join(__dirname, "../index.html"));
 
   // メニューバーを非表示。
   mainWindow.setMenuBarVisibility(false);

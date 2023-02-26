@@ -2,7 +2,7 @@
   "name": "electron-ts-sample",
   "version": "1.0.0",
   "description": "A sample of running Electron with TypeScript.",
-  "main": "main.ts",
+  "main": "dist/main.js",
   "scripts": {
     "build": "tsc",
     "start": "npm run build && electron ./dist/main.js"
