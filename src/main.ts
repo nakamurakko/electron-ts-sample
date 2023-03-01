@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import * as path from 'path';
 
 function createWindow() {
@@ -47,3 +47,19 @@ app.on("window-all-closed", () => {
 // このファイルでは、アプリ内のとある他のメインプロセスコードを
 // インクルードできます。
 // 別々のファイルに分割してここで require することもできます。
+
+ipcMain.handle('greeting',
+  /**
+   * 挨拶を返す。
+   *
+   * @param event イベントデータ。
+   * @param whoIs 挨拶する相手。
+   * @returns 挨拶。
+   */
+  (event: Electron.IpcMainInvokeEvent, whoIs: string): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      let result: string = 'Hello ' + whoIs + '.';
+      resolve(result);
+      return;
+    });
+  });
