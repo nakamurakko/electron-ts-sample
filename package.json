@@ -18,7 +18,10 @@
     "files": [
       "!.github",
       "!.vscode",
-      "!src"
+      "!src",
+      "!LICENSE",
+      "!README.md",
+      "!tsconfig.json"
     ]
   },
   "devDependencies": {
