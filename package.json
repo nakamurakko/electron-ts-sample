@@ -5,12 +5,25 @@
   "main": "dist/main.js",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && electron ./dist/main.js"
+    "start": "npm run build && electron ./dist/main.js",
+    "build-portable": "npm run build && electron-builder build --windows portable"
   },
   "author": "nakamurakko",
   "license": "MIT",
+  "build": {
+    "asar": "false",
+    "directories": {
+      "output": "executableFile"
+    },
+    "files": [
+      "!.github",
+      "!.vscode",
+      "!src"
+    ]
+  },
   "devDependencies": {
     "electron": "^23.1.1",
+    "electron-builder": "^23.6.0",
     "typescript": "^4.9.5"
   }
 }
