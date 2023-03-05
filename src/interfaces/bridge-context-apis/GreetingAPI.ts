@@ -1,4 +1,11 @@
 /**
+ * API 取得用インターフェイス。
+ */
+interface ApiWindow extends Window {
+  GreetingsAPI: GreetingsAPI;
+}
+
+/**
  * GreetingsAPI 用インターフェイス。
  */
 interface GreetingsAPI {
