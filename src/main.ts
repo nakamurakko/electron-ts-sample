@@ -5,12 +5,12 @@ async function createWindow(): Promise<void> {
   // ブラウザウインドウを作成します。
   const mainWindow: BrowserWindow = new BrowserWindow({
     webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
+      preload: path.join(__dirname, 'preload.js'),
     },
   });
 
   // そしてアプリの index.html を読み込みます。
-  await mainWindow.loadFile(path.join(__dirname, "../index.html"));
+  await mainWindow.loadFile(path.join(__dirname, '../index.html'));
 
   // メニューバーを非表示。
   mainWindow.setMenuBarVisibility(false);
@@ -38,8 +38,8 @@ void app.whenReady()
 // macOS を除き、全ウインドウが閉じられたときに終了します。 ユーザーが
 // Cmd + Q で明示的に終了するまで、アプリケーションとそのメニューバーを
 // アクティブにするのが一般的です。
-app.on("window-all-closed", () => {
-  if (process.platform !== "darwin") {
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
     app.quit();
   }
 });
