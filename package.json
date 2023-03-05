@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "npm run build && electron ./dist/main.js",
+    "lint": "eslint . --ext ts,tsx",
     "build-portable": "npm run build && electron-builder build --windows portable"
   },
   "author": "nakamurakko",
@@ -25,8 +26,13 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
     "electron": "^23.1.1",
     "electron-builder": "^23.6.0",
     "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "rxjs": "^7.8.0"
   }
 }

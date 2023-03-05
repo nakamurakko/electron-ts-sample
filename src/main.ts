@@ -1,16 +1,16 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
 import * as path from 'path';
 
-function createWindow() {
+async function createWindow(): Promise<void> {
   // ブラウザウインドウを作成します。
-  const mainWindow = new BrowserWindow({
+  const mainWindow: BrowserWindow = new BrowserWindow({
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
   });
 
   // そしてアプリの index.html を読み込みます。
-  mainWindow.loadFile(path.join(__dirname, "../index.html"));
+  await mainWindow.loadFile(path.join(__dirname, "../index.html"));
 
   // メニューバーを非表示。
   mainWindow.setMenuBarVisibility(false);
@@ -22,15 +22,15 @@ function createWindow() {
 // このメソッドは、Electron の初期化が完了し、
 // ブラウザウインドウの作成準備ができたときに呼ばれます。
 // 一部のAPIはこのイベントが発生した後にのみ利用できます。
-app.whenReady()
-  .then(() => {
-    createWindow();
+void app.whenReady()
+  .then(async () => {
+    await createWindow();
 
     app.on("activate", () => {
       // macOS では、Dock アイコンのクリック時に他に開いているウインドウがない場合、
       // アプリのウインドウを再作成するのが一般的です。
       if (BrowserWindow.getAllWindows().length === 0) {
-        createWindow();
+        void createWindow();
       }
     });
   });
@@ -57,8 +57,8 @@ ipcMain.handle('greeting',
    * @returns 挨拶。
    */
   (event: Electron.IpcMainInvokeEvent, whoIs: string): Promise<string> => {
-    return new Promise((resolve, reject) => {
-      let result: string = 'Hello ' + whoIs + '.';
+    return new Promise((resolve) => {
+      const result: string = 'Hello ' + whoIs + '.';
       resolve(result);
       return;
     });
