@@ -18,9 +18,8 @@
             ],
             "outputCapture": "std",
             "sourceMaps": true,
-            "resolveSourceMapLocations": [
-                "${workspaceFolder}/**",
-                "!**/node_modules/**"
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"
             ],
             "preLaunchTask": "npm: build"
         },
@@ -30,6 +29,10 @@
             "request": "attach",
             "port": 9223,
             "webRoot": "${workspaceFolder}",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"
+            ],
             "timeout": 30000
         }
     ],
