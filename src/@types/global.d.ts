@@ -1,6 +1,6 @@
 // https://www.electronjs.org/ja/docs/latest/tutorial/context-isolation
 
-export declare global {
+declare global {
   interface Window {
     GreetingsAPI: GreetingsAPI
   }
@@ -9,7 +9,7 @@ export declare global {
 /**
  * GreetingsAPI 用インターフェイス。
  */
-interface GreetingsAPI {
+export interface GreetingsAPI {
   /**
    * 挨拶を返す。
    *
