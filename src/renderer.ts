@@ -5,8 +5,6 @@
 // Use preload.js to selectively enable features
 // needed in the renderer process.
 
-const greetingAPI: GreetingsAPI = (window as unknown as ApiWindow).GreetingsAPI;
-
 document.getElementById('greeting-button')
   ?.addEventListener('click',
     /**
@@ -18,7 +16,7 @@ document.getElementById('greeting-button')
       const greetingTo: HTMLInputElement = document.getElementById('greeting-to') as HTMLInputElement;
       const greeting: HTMLElement = document.getElementById('greeting') as HTMLElement;
 
-      void greetingAPI.greeting(greetingTo.value)
+      void window.GreetingsAPI.greeting(greetingTo.value)
         .then((value: string) => {
           greeting.innerText = value;
         });

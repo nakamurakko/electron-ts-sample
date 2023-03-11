@@ -1,8 +1,9 @@
-/**
- * API 取得用インターフェイス。
- */
-interface ApiWindow extends Window {
-  GreetingsAPI: GreetingsAPI;
+// https://www.electronjs.org/ja/docs/latest/tutorial/context-isolation
+
+export declare global {
+  interface Window {
+    GreetingsAPI: GreetingsAPI
+  }
 }
 
 /**
