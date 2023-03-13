@@ -17,7 +17,7 @@ document.getElementById('greeting-button')
       const greeting: HTMLElement = document.getElementById('greeting') as HTMLElement;
 
       void window.GreetingsAPI.greeting(greetingTo.value)
-        .then((value: string) => {
+        .then(value => {
           greeting.innerText = value;
         });
     });
