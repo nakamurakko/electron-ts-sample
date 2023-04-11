@@ -25,7 +25,7 @@
                 "${workspaceFolder}/**",
                 "!**/node_modules/**"
             ],
-            "preLaunchTask": "npm: build"
+            // "preLaunchTask": "npm: build"
         },
         {
             "name": "Debug Renderer Process",
