@@ -30,6 +30,6 @@
     "@typescript-eslint/parser": "^5.60.1",
     "electron": "^25.0.1",
     "electron-builder": "^23.6.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.1.6"
   }
 }
