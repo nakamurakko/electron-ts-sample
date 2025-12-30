@@ -2,6 +2,7 @@ import { app, BrowserWindow, ipcMain } from 'electron';
 import * as path from 'path';
 
 async function createWindow(): Promise<void> {
+
   // ブラウザウインドウを作成します。
   const mainWindow: BrowserWindow = new BrowserWindow({
     webPreferences: {
@@ -17,6 +18,7 @@ async function createWindow(): Promise<void> {
 
   // デベロッパー ツールを開きます。
   // mainWindow.webContents.openDevTools();
+
 }
 
 // このメソッドは、Electron の初期化が完了し、
