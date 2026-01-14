@@ -17,11 +17,14 @@
       "output": "executableFile"
     },
     "files": [
+      "!.eslintrc.json",
       "!.github",
       "!.vscode",
-      "!src",
+      "!build.bat",
+      "!build-portable.bat",
       "!LICENSE",
       "!README.md",
+      "!src",
       "!tsconfig.json"
     ]
   },
