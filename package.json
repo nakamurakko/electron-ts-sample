@@ -4,7 +4,7 @@
   "description": "A sample of running Electron with TypeScript.",
   "main": "dist/main.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --outDir dist",
     "start": "npm run build && electron ./dist/main.js",
     "lint": "eslint . --ext ts,tsx",
     "build-portable": "npm run build && electron-builder build --windows portable"
@@ -33,6 +33,6 @@
     "@typescript-eslint/parser": "^8.62.1",
     "electron": "^43.0.0",
     "electron-builder": "^26.15.3",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   }
 }
