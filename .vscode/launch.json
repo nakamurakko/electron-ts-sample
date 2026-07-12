@@ -18,9 +18,6 @@
       ],
       "outputCapture": "std",
       "sourceMaps": true,
-      "outFiles": [
-        "${workspaceFolder}/dist/**/*.js"
-      ],
       "resolveSourceMapLocations": [
         "${workspaceFolder}/**",
         "!**/node_modules/**"
@@ -42,7 +39,8 @@
       "configurations": [
         "Debug Main Process",
         "Debug Renderer Process"
-      ]
+      ],
+      "stopAll": true,
     }
   ]
 }
