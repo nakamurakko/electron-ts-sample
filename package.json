@@ -19,6 +19,7 @@
     "files": [
       "!.eslintrc.json",
       "!.github",
+      "!.npmrc",
       "!.vscode",
       "!build.bat",
       "!build-portable.bat",
